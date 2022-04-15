@@ -14,10 +14,10 @@ public class RabbitMQService {
     @Autowired
     private ObjectMapper objectMapper;
 
-    public void  envioMensagem (String queueName, Object message){
+    public void envioMensagem (String queueName, Object message){
         try {
             String messageJson = this.objectMapper.writeValueAsString(message);
-            this.rabbitTemplate.convertAndSend(queueName, message);
+            this.rabbitTemplate.convertAndSend(queueName, messageJson);
         } catch (Exception e){
             e.printStackTrace();
         }
