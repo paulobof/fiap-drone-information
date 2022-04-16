@@ -69,4 +69,5 @@ Projeto Java para comunicação de dados obtidos por Drones via mensageria.
   http://localhost:8080/swagger-ui.html
 
 ### Postman Collection:
-- Importe a collection localizada na raiz do projeto: **TransactionAPI.postman_collection.json**
+- Importe a collection localizada na raiz do projeto: 
+- **DRONE-INFORMATION.postman_collection.json**
