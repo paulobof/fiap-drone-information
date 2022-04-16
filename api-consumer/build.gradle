@@ -14,11 +14,15 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.amqp:spring-rabbit'
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'com.fasterxml.jackson.core:jackson-databind'
-}
 
+    //mail:
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+    implementation 'org.springframework:spring-context-support:5.0.1.RELEASE'
+}
+      
 tasks.named('test') {
     useJUnitPlatform()
 }

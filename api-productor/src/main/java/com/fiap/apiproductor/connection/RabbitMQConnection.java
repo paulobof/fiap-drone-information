@@ -32,7 +32,7 @@ public class RabbitMQConnection {
     }
 
     @PostConstruct
-    private void adiciona(){
+    private void rabbitMQAdd(){
         Queue queue = this.queue(RabbitMQConstants.QUEUE_NAME);
 
         DirectExchange directExchange = this.directExchange();
