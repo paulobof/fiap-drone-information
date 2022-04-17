@@ -1,6 +1,6 @@
 package com.fiap.apiproductor.controller;
 
-import com.fiap.apiproductor.constants.Constants;
+import com.fiap.apiproductor.constants.RabbitMQConstants;
 import com.fiap.apiproductor.dto.DroneDto;
 import com.fiap.apiproductor.service.RabbitMQService;
 import org.springframework.http.HttpStatus;
@@ -22,6 +22,6 @@ public class DroneController {
 
     @PutMapping
     private ResponseEntity sendDroneInformation(@RequestBody DroneDto droneDto){
-        this.rabbitMQService.sendDroneInformation(Constants.QUEUE_NAME, droneDto);
+        this.rabbitMQService.sendDroneInformation(RabbitMQConstants.QUEUE_NAME, droneDto);
         return new ResponseEntity(HttpStatus.OK);    }
 }
