@@ -50,14 +50,13 @@ Projeto Java para comunicação de dados obtidos por Drones via mensageria.
 
 ## No Diretório do projeto:
 
-### 1 - Criando o jar
+### 1 - Criando o jar:
 
     gradle build
 
-### 2 - Set a URL de conexão com o mongodb nas variáveis de ambiente:
+### 2 - Set RabbitMQ:
 
-    export SPRING_DATASOURCE_URL=mongodb://localhost:27017/transactiondb
-
+    TODO
 
 ### 3 - Executando a aplicação:
 

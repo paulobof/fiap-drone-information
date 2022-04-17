@@ -14,14 +14,18 @@ public class DroneConsumer {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     @RabbitListener(queues = RabbitMQConstants.QUEUE_NAME)
-    private void consumidor(String mensagem) throws JsonProcessingException, InterruptedException {
+    private void consumidor(String mensagem) {
+        DroneDto droneDto = null;
+        try {
+            droneDto = objectMapper.readValue(mensagem, DroneDto.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        DroneDto droneDto = objectMapper.readValue(mensagem, DroneDto.class);
-
-        if(droneDto.umidade<=0.15 || droneDto.temperatura<=0 || droneDto.temperatura>=30) {
+        if (droneDto != null && (droneDto.umidade <= 0.15 || droneDto.temperatura <= 0 || droneDto.temperatura >= 30)) {
             System.out.println("Enviar E-mail");
-            System.out.println("Umidade: "+droneDto.umidade);
-            System.out.println("Temperatura: "+droneDto.temperatura);
+            System.out.println("Umidade: " + droneDto.umidade);
+            System.out.println("Temperatura: " + droneDto.temperatura);
         }
 
     }
