@@ -1,6 +1,6 @@
 package com.fiap.apiproductor.connection;
 
-import com.fiap.apiproductor.constants.RabbitMQConstants;
+import com.fiap.apiproductor.constants.Constants;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.DirectExchange;
@@ -33,7 +33,7 @@ public class RabbitMQConnection {
 
     @PostConstruct
     private void rabbitMQAdd(){
-        Queue queue = this.queue(RabbitMQConstants.QUEUE_NAME);
+        Queue queue = this.queue(Constants.QUEUE_NAME);
 
         DirectExchange directExchange = this.directExchange();
 
