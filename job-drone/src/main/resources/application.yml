@@ -1,0 +1,4 @@
+drone: ${ID_DRONE}
+spring:
+  main:
+    web-application-type: NONE
