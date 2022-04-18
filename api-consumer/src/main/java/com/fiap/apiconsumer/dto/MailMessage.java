@@ -49,4 +49,13 @@ public class MailMessage {
         this.body = body;
     }
 
+    @Override
+    public String toString() {
+        return "MailMessage{" +
+                "sender='" + sender + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", subject='" + subject + '\'' +
+                ", body='" + body + '\'' +
+                '}';
+    }
 }

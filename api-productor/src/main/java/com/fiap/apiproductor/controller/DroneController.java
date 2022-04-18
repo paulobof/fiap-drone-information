@@ -5,10 +5,7 @@ import com.fiap.apiproductor.dto.DroneDto;
 import com.fiap.apiproductor.service.RabbitMQService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value="drone")
@@ -20,8 +17,10 @@ public class DroneController {
         this.rabbitMQService = rabbitMQService;
     }
 
-    @PutMapping
+    @PostMapping
     private ResponseEntity sendDroneInformation(@RequestBody DroneDto droneDto){
+        System.out.println("Recebido dados via Drone: \n");
+        System.out.println(droneDto);
         this.rabbitMQService.sendDroneInformation(RabbitMQConstants.QUEUE_NAME, droneDto);
         return new ResponseEntity(HttpStatus.OK);    }
 }

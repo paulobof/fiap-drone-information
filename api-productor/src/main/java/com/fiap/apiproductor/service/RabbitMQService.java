@@ -17,6 +17,8 @@ public class RabbitMQService {
     public void sendDroneInformation (String queueName, Object message){
         try {
             String messageJson = this.objectMapper.writeValueAsString(message);
+            System.out.println("Mensagem publicada na fila: \n");
+            System.out.println(messageJson + "\n");
             this.rabbitTemplate.convertAndSend(queueName, messageJson);
         } catch (Exception e){
             e.printStackTrace();

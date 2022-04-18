@@ -6,9 +6,9 @@ import com.fiap.apiproductor.dto.DroneDto;
 import com.fiap.apiproductor.service.RabbitMQService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Random;
-import static org.apache.commons.lang3.RandomUtils.nextInt;
 
 @Component
 public class DroneScheduler {
@@ -22,15 +22,18 @@ public class DroneScheduler {
     @Scheduled(fixedDelay = 10000)
     public void executar() {
         DroneDto droneDto;
-        for (int i = 1; i < DroneConstants.QTY_DRONE+1; i++) {
+        for (int i = 1; i < DroneConstants.QTY_DRONE + 1; i++) {
             droneDto = new DroneDto(
                     (long) i,
-                    randomDouble(-180,180),
-                    randomDouble(-180,180),
-                    randomDouble(10,40),
-                    randomDouble(0,100),
-                    !(nextInt() % 10 == 0));
-            this.rabbitMQService.sendDroneInformation(RabbitMQConstants.QUEUE_NAME, droneDto);
+                    randomDouble(-180, 180),
+                    randomDouble(-180, 180),
+                    randomDouble(10, 40),
+                    randomDouble(0, 100),
+                    !(new Random().nextInt() % 10 == 0));
+//            this.rabbitMQService.sendDroneInformation(RabbitMQConstants.QUEUE_NAME, droneDto);
+//           String uri = "http://localhost:8081/drone";
+//            RestTemplate restTemplate = new RestTemplate();
+//            restTemplate.postForLocation()
         }
     }
 

@@ -65,4 +65,16 @@ public class DroneDto {
     public void setRastreamento(boolean rastreamento) {
         this.rastreamento = rastreamento;
     }
+
+    @Override
+    public String toString() {
+        return "DroneDto{" +
+                "id=" + id +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", temperatura=" + temperatura +
+                ", umidade=" + umidade +
+                ", rastreamento=" + rastreamento +
+                '}';
+    }
 }

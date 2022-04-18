@@ -1,3 +1,7 @@
+sender: ${SENDER}
+receiver: ${RECEIVER}
+password: ${PASSWORD}
+
 spring:
   rabbitmq:
     host: localhost
