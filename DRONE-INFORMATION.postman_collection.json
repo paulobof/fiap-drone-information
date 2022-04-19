@@ -1,18 +1,18 @@
 {
 	"info": {
-		"_postman_id": "d1e1ff87-2795-45e9-9529-eaf0b550b76b",
+		"_postman_id": "cdf89640-c2e8-4db0-bb53-d93fc7083099",
 		"name": "DRONE-INFORMATION",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "PUT DRONE",
+			"name": "Leitura",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"1\",\r\n    \"latitude\": \"+20\",\r\n    \"longitude\": \"-90\",\r\n    \"temperatura\":\"35\",\r\n    \"umidade\": \"0.15\",\r\n    \"rastreamento\": true\r\n}",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"latitude\": \"+20\",\r\n    \"longitude\": \"-90\",\r\n    \"temperatura\":\"37\",\r\n    \"umidade\": \"0.60\",\r\n    \"rastreamento\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
