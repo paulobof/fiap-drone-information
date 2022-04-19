@@ -27,7 +27,7 @@ Projeto Java para comunicação de dados obtidos por Drones via mensageria.
 ### 1 - Download do projeto no github:
 
 ```
-git clone https://github.com/paulobof/drone-information.git
+git clone https://github.com/paulobof/fiap-drone-information.git
 ```
 
 ### No Diretório do projeto:
