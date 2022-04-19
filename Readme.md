@@ -96,6 +96,10 @@ gradle bootRun
 
 #### **Obs:** Para cada instância de drone, repita o passo 4 sem executar o **_gradle build_** novamente com ids diferentes em um novo terminal.
 
+### Video em Funcionamento
+- Link Youtube: 
+  https://youtu.be/5u_tQ2kLKzY
+
 ### Documentação
 - Acesse a documentação no seu browser no endereço:
   http://localhost:8081/swagger-ui.html
