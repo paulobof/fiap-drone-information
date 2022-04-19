@@ -105,7 +105,6 @@ gradle bootRun
 - **DRONE-INFORMATION.postman_collection.json**
 
 ### Developers
-
 | Github                              | Linkedin                                      |
 |-------------------------------------|-----------------------------------------------|
 | https://github.com/paulobof         | https://www.linkedin.com/in/paulobof          |
