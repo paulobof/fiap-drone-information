@@ -25,9 +25,10 @@ Projeto Java para comunicação de dados obtidos por Drones via mensageria.
 - Docker
 
 ### 1 - Download do projeto no github:
-  ```
-  $ git clone https://github.com/paulobof/drone-information.git
-  ```
+
+```
+git clone https://github.com/paulobof/drone-information.git
+```
 
 ### No Diretório do projeto:
 
