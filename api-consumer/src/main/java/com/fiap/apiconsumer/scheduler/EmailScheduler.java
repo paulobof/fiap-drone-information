@@ -27,7 +27,7 @@ public class EmailScheduler extends DroneConsumer {
     }
 
 
-    @Scheduled(fixedDelay = 15000)
+    @Scheduled(fixedDelay = 60000)
     public void sendEmail() {
         if (stringBuilder != null && !stringBuilder.toString().equals("")) {
             stringBuilder.append("----------------------------------------------");
@@ -35,9 +35,9 @@ public class EmailScheduler extends DroneConsumer {
             mailMessage.setBody(stringBuilder.toString());
             mailMessage.setSender(SENDER);
             mailMessage.setRecipient(RECEIVER);
-            mailer.sendEmail(mailMessage);
             System.out.println("\nEnviando alerta: \n");
-            System.out.println(mailMessage);
+            System.out.println(mailMessage + "\n");
+            mailer.sendEmail(mailMessage);
             stringBuilder.setLength(0);
         }
     }

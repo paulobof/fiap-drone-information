@@ -15,57 +15,75 @@ Prof: Rafael Thomazeli Mazzucato
 
 Projeto Java para comunicação de dados obtidos por Drones via mensageria.
 
-## Executando o projeto (com Docker)
 
-### 1 - Download do projeto no github:
-
-  ```
-  $ git clone https://github.com/paulobof/drone-information.git
-  ```
-
-### 2 - Executar o docker-compose do projeto:
-#### no diretório do projeto execute o comando:
-
- ~~~shell
-  docker-compose up 
- ~~~
-
-### Documentação
-- Acesse a documentação no seu browser no endereço:
-  http://localhost:8081/swagger-ui.html
-
-
-## Executando o projeto (Sem Docker)
-
-> **Download do projeto no github:**
-  ```
-  $ git clone https://github.com/paulobof/drone-information.git
-  ```
+## Executando o projeto
 
 ## Pré Requisitos
 
 - Gradle 7.3
 - Java 11
-- RabbitMQ 3.0
+- Docker
 
-## No Diretório do projeto:
+### 1 - Download do projeto no github:
+  ```
+  $ git clone https://github.com/paulobof/drone-information.git
+  ```
 
-### 1 - Criando o jar:
+### No Diretório do projeto:
 
-    gradle build
+### 1 - Subindo o RabbitMQ via docker-compose:
+#### no diretório do projeto execute o comando:
 
-### 2 - Set RabbitMQ:
+ ~~~shell
+docker-compose up -d
+ ~~~
 
-    TODO
+### 2 - Subindo o producer:
+#### no diretório do projeto api-productor:
 
-### 3 - Executando a aplicação:
+> gradle build
 
-    gradle bootRun
+> gradle bootRun
 
+### 3 - Subindo o consumer:
+#### no diretório do projeto api-consumer, abra um novo terminal, adicione as variáveis de ambiente para o alerta de e-mail:
+#### Na variável RECEIVER informe seu e-mail
+
+~~~shell
+export RECEIVER=****@****
+~~~
+~~~shell
+export SENDER=transaction.fiap@gmail.com
+~~~
+~~~shell
+export PASSWORD=Tr@n54ct1n
+~~~
+
+#### Após setar as variáveis de ambiente, execute os comandos:
+
+> gradle build
+
+> gradle bootRun
+
+### 4 - Subindo o Job(Drones):
+#### no diretório do projeto job-drone, abra um novo terminal, via variável de ambiente, informe o id do drone:
+#### **Ex** Informando id 5:
+
+~~~shell
+export ID_DRONE=5
+~~~
+
+#### Após informar o ID drone, é só buildar e subir a instância de drone com os comandos abaixo:
+
+> gradle build
+
+> gradle bootRun
+
+#### **Obs:** Para cada instância de drone, repita o passo 4 sem executar o **_gradle build_** novamente com ids diferentes em um novo terminal.
 
 ### Documentação
 - Acesse a documentação no seu browser no endereço:
-  http://localhost:8080/swagger-ui.html
+  http://localhost:8081/swagger-ui.html
 
 ### Postman Collection:
 - Importe a collection localizada na raiz do projeto: 
