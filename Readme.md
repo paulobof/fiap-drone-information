@@ -41,9 +41,13 @@ docker-compose up -d
 ### 2 - Subindo o producer:
 #### no diretório do projeto api-productor:
 
-> gradle build
+~~~shell
+gradle build
+~~~
 
-> gradle bootRun
+~~~shell
+gradle bootRun
+~~~
 
 ### 3 - Subindo o consumer:
 #### no diretório do projeto api-consumer, abra um novo terminal, adicione as variáveis de ambiente para o alerta de e-mail:
@@ -61,9 +65,14 @@ export PASSWORD=Tr@n54ct1n
 
 #### Após setar as variáveis de ambiente, execute os comandos:
 
-> gradle build
+~~~shell
+gradle build
+~~~
 
-> gradle bootRun
+~~~shell
+gradle bootRun
+~~~
+
 
 ### 4 - Subindo o Job(Drones):
 #### no diretório do projeto job-drone, abra um novo terminal, via variável de ambiente, informe o id do drone:
@@ -75,9 +84,14 @@ export ID_DRONE=5
 
 #### Após informar o ID drone, é só buildar e subir a instância de drone com os comandos abaixo:
 
-> gradle build
+~~~shell
+gradle build
+~~~
 
-> gradle bootRun
+~~~shell
+gradle bootRun
+~~~
+
 
 #### **Obs:** Para cada instância de drone, repita o passo 4 sem executar o **_gradle build_** novamente com ids diferentes em um novo terminal.
 
