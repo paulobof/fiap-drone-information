@@ -88,3 +88,10 @@ export ID_DRONE=5
 ### Postman Collection:
 - Importe a collection localizada na raiz do projeto: 
 - **DRONE-INFORMATION.postman_collection.json**
+
+### Developers
+
+| Github                              | Linkedin                                      |
+|-------------------------------------|-----------------------------------------------|
+| https://github.com/paulobof         | https://www.linkedin.com/in/paulobof          |
+| https://github.com/wees-guimaraes   | https://www.linkedin.com/in/wesley-guimaraes  |
